@@ -1,0 +1,3 @@
+[submodule "msr605"]
+	path = msr605
+	url = https://github.com/steeve/msr605.git
