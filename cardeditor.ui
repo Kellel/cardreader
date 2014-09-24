@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>343</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Card Editor</string>
+  </property>
+  <widget class="QPlainTextEdit" name="statusEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>471</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="resetButton">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>10</y>
+     <width>131</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="eraseButton">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>80</y>
+     <width>131</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Erase</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="readButton">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>150</y>
+     <width>131</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Read</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="track1Edit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>290</y>
+     <width>341</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>270</y>
+     <width>621</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="writeButton">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>290</y>
+     <width>271</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Write</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>10</y>
+     <width>20</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
