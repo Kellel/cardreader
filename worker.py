@@ -29,7 +29,7 @@ class Singleton(type):
         return cls._instances[cls]
 
 class Worker:
-#    __metaclass__ = Singleton
+    __metaclass__ = Singleton
 
     def __init__(self, device):
         from ops import BasicOps as ops
@@ -44,20 +44,8 @@ class Worker:
     def read(self):
         self.workq.put((self.ops.READ, None))
 
-    def read_tracks(self):
-        self.workq.put((self.ops.READTRACKS, None))
-
     def write(self, data):
         self.workq.put((self.ops.WRITE, data))
-
-    def writetracks(self, track1 = None, track2 = None, track3 = None):
-        t1 = track1 or self.ops.BLANK
-        t2 = track2 or self.ops.BLANK
-        t3 = track3 or self.ops.BLANK
-
-        data = "|".join([t1, t2, t3])
-
-        self.workq.put((self.ops.WRITETRACKS, data))
 
     def reset(self):
         self.workq.put((self.ops.RESET, None))
