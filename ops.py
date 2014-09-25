@@ -57,7 +57,7 @@ class BasicOps(object):
 class MSROps(BasicOps):
     def __init__(self, device):
         self.device = msr(device)
-        super(Ops, self).__init__()
+        super(MSROps, self).__init__()
 
     def test(self):
         return "UNIMPLEMENTED"
