@@ -3,8 +3,8 @@ import json
 
 class Parse(object):
     headers = {
-        "X-Parse-Application-Id": "iG8N1HIf7pWRgKXnxWW6t34TdbH5APHYBH9HGIKI",
-        "X-Parse-REST-API-Key": "8c0gxkdrAc3DuafWI9xduTpxvYAfhL9CjczM0w8H",
+        "X-Parse-Application-Id": "xxx",
+        "X-Parse-REST-API-Key": "xxx",
         'content-type': 'application/json'
             }
 
