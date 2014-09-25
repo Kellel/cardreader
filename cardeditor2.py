@@ -5,7 +5,7 @@ from PyQt4 import QtGui, QtCore
 from ui import Ui_Dialog
 from parse_api import Parse
 
-from msr import msr
+from worker import Worker
 
 class CardEditor(QtGui.QWidget):
     def __init__(self, device):
@@ -14,7 +14,7 @@ class CardEditor(QtGui.QWidget):
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
 
-        self.dev = msr(device)
+        self.worker = Worker("/dev/ttyUSB0")
         self.parse = Parse()
 
         self.ui.resetButton.clicked.connect(self.reset)
@@ -24,38 +24,32 @@ class CardEditor(QtGui.QWidget):
 
         self.ui.track1Edit.returnPressed.connect(self.write)
 
+        self.timer = QtCore.QTimer()
+        self.timer.setInterval(2000)
+        self.timer.timeout.connect(self.read_device)
+        self.timer.start()
+
+    def closeEvent(self, event):
+        self.timer.stop()
+        self.worker.terminate()
+        event.accept()
+
     def write_status(self, msg):
         self.ui.statusEdit.insertPlainText(msg + '\n')
         self.ui.statusEdit.moveCursor(QtGui.QTextCursor.End)
         self.ui.statusEdit.ensureCursorVisible()
 
     def reset(self):
-        self.dev.reset()
-        self.write_status("Device Reset!")
+        self.worker.reset()
+        self.write_status("[Sent RESET]")
 
     def erase(self):
-        self.dev.erase_tracks(True, True, True)
-        self.write_status("Card Erased!")
+        self.worker.erase()
+        self.write_status("[Sent ERASE]")
 
     def read(self):
-        status = ""
-        try:
-            _, t2,_  = self.dev.read_tracks()
-        except Exception as e:
-            self.write_status(str(e))
-        else:
-            if t2:
-                t2 = t2[1:len(t2)-1]
-                print (t2)
-                user = self.parse.getUserById(str(t2))
-                if user:
-                    status = "User {} Found".format(user['usernameDisplay'])
-                else:
-                    status = "User not Found"
-            else:
-                status = "No Card Data"
-
-            self.write_status(status + '\n')
+        self.worker.read()
+        self.write_status("[Sent READ]")
 
     def write(self):
         username = self.ui.track1Edit.text().toAscii()
@@ -67,11 +61,21 @@ class CardEditor(QtGui.QWidget):
             phone = user['phone'] if 'phone' in user else user['phone1'] if 'phone1' in user else ""
             status = "User {} found. Phone: {}".format(user['usernameDisplay'], phone)
             self.write_status(status)
-            self.dev.write_tracks(t2 = str(user['userId']))
+            self.worker.write(str(user['userId']))
         else:
             self.write_status("User lookup failed!")
 
         self.ui.track1Edit.clear()
+
+    def read_device(self):
+        status, result = self.worker.get_status()
+        
+        while status:
+            if result:
+                self.write_status("{}: {}".format(status, result))
+            else:
+                self.write_status(status)
+            status, result = self.worker.get_status()
 
 
 if __name__ == '__main__':
