@@ -7,355 +7,168 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>412</height>
+    <height>359</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>CardEditor</string>
+   <string>Dialog</string>
   </property>
-  <widget class="QStackedWidget" name="stackedWidget">
+  <widget class="QLineEdit" name="deviceEdit">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>-10</y>
-     <width>641</width>
-     <height>411</height>
+     <x>20</x>
+     <y>310</y>
+     <width>271</width>
+     <height>30</height>
     </rect>
    </property>
-   <widget class="QWidget" name="basicPage">
-    <widget class="Line" name="line">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>320</y>
-       <width>601</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_2">
-     <property name="geometry">
-      <rect>
-       <x>440</x>
-       <y>30</y>
-       <width>21</width>
-       <height>371</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-    <widget class="QPlainTextEdit" name="statusEdit">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>411</width>
-       <height>281</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="userEdit">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>350</y>
-       <width>411</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="advancedButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>30</y>
-       <width>151</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Advanced</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="readButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>120</y>
-       <width>151</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Read</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="writeButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>230</y>
-       <width>151</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Write</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="lookupButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>350</y>
-       <width>151</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Lookup</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="advancedPage">
-    <widget class="QPushButton" name="basicButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>30</y>
-       <width>151</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Basic</string>
-     </property>
-    </widget>
-    <widget class="QPlainTextEdit" name="userstatusEdit">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>310</y>
-       <width>411</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="Line" name="line_3">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>290</y>
-       <width>601</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lookupEdit">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>310</y>
-       <width>151</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="lookupuserButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>350</y>
-       <width>151</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Lookup User</string>
-     </property>
-    </widget>
-    <widget class="QPlainTextEdit" name="statusEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>70</y>
-       <width>411</width>
-       <height>161</height>
-      </rect>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="Line" name="line_4">
-     <property name="geometry">
-      <rect>
-       <x>440</x>
-       <y>30</y>
-       <width>20</width>
-       <height>371</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="track1Edit">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>260</y>
-       <width>131</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="track2Edit">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>260</y>
-       <width>131</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="track3Edit">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>260</y>
-       <width>131</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>240</y>
-       <width>77</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Track 1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>240</y>
-       <width>77</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Track 2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>240</y>
-       <width>77</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Track 3</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="resetButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>80</y>
-       <width>151</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Reset</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="eraseButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>130</y>
-       <width>151</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Erase</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="readtracksButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>180</y>
-       <width>151</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Read Tracks</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="writetracksButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>240</y>
-       <width>151</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Write Tracks</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="deviceEdit">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>271</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="deviceButton">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>30</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Set Device</string>
-     </property>
-    </widget>
-   </widget>
+  </widget>
+  <widget class="QPushButton" name="deviceButton">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>310</y>
+     <width>121</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Set Device</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="statusEdit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>411</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="resetButton">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>20</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="eraseButton">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>80</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Erase</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="readtracksButton">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>140</y>
+     <width>151</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Read Tracks</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="writetracksButton">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>240</y>
+     <width>151</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Write Tracks</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="track3Edit">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>260</y>
+     <width>131</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="track2Edit">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>260</y>
+     <width>131</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="track1Edit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>260</y>
+     <width>131</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>240</y>
+     <width>77</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Track 1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>240</y>
+     <width>77</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Track 2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>240</y>
+     <width>77</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Track 3</string>
+   </property>
   </widget>
  </widget>
  <resources/>
